@@ -16,3 +16,9 @@ on:
           - two
           - three
           
+jobs:
+  MyFirstJob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello world"
