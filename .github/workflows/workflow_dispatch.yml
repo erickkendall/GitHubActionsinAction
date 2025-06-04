@@ -17,7 +17,7 @@ on:
           - three
           
 jobs:
-  MyFirstJob:
+  AnotherJob:
     runs-on: ubuntu-latest
 
     steps:
