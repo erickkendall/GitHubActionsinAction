@@ -1,0 +1,33 @@
+name: Test Terraform Setup
+
+on:
+ push:
+   branches: [ main ]
+ pull_request:
+   branches: [ main ]
+ workflow_dispatch:
+
+env:
+  TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
+
+jobs:
+  test-aws:
+    name: 'Test AWS'
+    runs-on: ubunt-latest
+    defaults:
+      run:
+        working-directory: ./terraform/aws
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
