@@ -13,7 +13,7 @@ env:
 jobs:
   test-aws:
     name: 'Test AWS'
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./terraform/aws
