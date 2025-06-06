@@ -30,6 +30,10 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        if: github.ref == 'refs/heads/main'
+
   test-azure:
     name: 'Test Azure'
     runs-on: ubuntu-latest
@@ -50,6 +54,10 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        if: github.ref == 'refs/heads/main'
+
   test-gcp:
     name: 'Test GCP'
     runs-on: ubuntu-latest
@@ -69,3 +77,10 @@ jobs:
       
       - name: Terraform Plan
         run: terraform plan
+
+      - name: Terraform Plan
+        run: terraform plan
+      
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        if: github.ref == 'refs/heads/main'
