@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Hello world"
-
-      - run: echo "${{ inputs.logLevel }}"
+      - run: |
+          echo "Hello world"
+          echo "${{ inputs.logLevel }}"
