@@ -22,3 +22,5 @@ jobs:
 
     steps:
       - run: echo "Hello world"
+
+      - run: echo ${{ options }}"
