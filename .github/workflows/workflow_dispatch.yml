@@ -23,4 +23,4 @@ jobs:
     steps:
       - run: echo "Hello world"
 
-      - run: echo ${{ options }}"
+      - run: echo "${{ options.logLevel }}"
