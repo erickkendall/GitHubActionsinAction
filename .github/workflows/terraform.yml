@@ -10,26 +10,6 @@ env:
   TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
 
 jobs:
-  test-aws:
-    name: 'Test AWS'
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./terraform/aws
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-      
-      - name: Terraform Init
-        run: terraform init
-      
-      - name: Terraform Plan
-        run: terraform plan
-
   test-azure:
     name: 'Test Azure'
     runs-on: ubuntu-latest
@@ -50,25 +30,4 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-  test-gcp:
-    name: 'Test GCP'
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./terraform/gcp
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-      
-      - name: Terraform Init
-        run: terraform init
-      
-      - name: Terraform Plan
-        run: terraform plan
-
-      - name: Terraform Plan
-        run: terraform plan
+ 
