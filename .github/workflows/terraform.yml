@@ -1,4 +1,4 @@
-name: Test Terraform Setup
+name: Azure Kubernetes Setup
 on:
   push:
     branches: [ main ]
